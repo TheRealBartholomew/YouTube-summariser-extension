@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Summary",
+    "version": "1.0",
+    "permissions": ["scripting", "activeTab", "storage", "unlimitedStorage", "tabs", "alarms"],
+    "icons": {
+        "16": "lemon.png",
+        "48": "lemon.png",
+        "128": "lemon.png"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "lemon.png",
+            "48": "lemon.png",
+            "128": "lemon.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "options_page": "options.html",
+    "host_permissions": [
+        "<all_urls>"
+    ]
+}
